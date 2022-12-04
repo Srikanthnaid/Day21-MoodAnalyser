@@ -16,11 +16,20 @@ public class MoodAnalyser {
 
 	// Function to Check Mood of a String Entered
 	public String moodCheck() {
-		if (message.contains("Sad")) {
-			System.out.println("In SAD Mood");
-			return "SAD";
-		} else {
-			System.out.println("In HAPPY Mood");
+		
+		// Created Try and Catch Blocks to Handle Exceptions if Occurs.
+		try {
+			if (message.contains("Sad")) {
+				System.out.println("In SAD Mood");
+				return "SAD";
+			} else {
+				System.out.println("In HAPPY Mood");
+				return "HAPPY";
+			}
+		}
+		// Don't Know what would be exception, So Took a Normal Exception to Catch,
+		// Whatever Exception Occurs.
+		catch (Exception exception) {
 			return "HAPPY";
 		}
 	}

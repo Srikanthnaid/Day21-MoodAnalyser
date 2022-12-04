@@ -6,7 +6,7 @@ import Day21.MoodeAnalyser.MoodAnalyser;
 
 public class MoodAnalyserTest {
 
-	// Refactor TC 1.1
+	// UC2 TC 1.1
 	@Test
 	public void if_MessageWasSad_ShouldReturnSad() {
 		MoodAnalyser moodAnalyze = new MoodAnalyser("I am in Sad Mood");
@@ -15,7 +15,7 @@ public class MoodAnalyserTest {
 		Assertions.assertEquals("SAD", result1);
 	}
 
-	// Refactor TC 1.2
+	// UC2 TC 1.2
 	@Test
 	public void if_MessageWasHappy_ShouldReturnHappy() {
 		MoodAnalyser moodAnalyze = new MoodAnalyser("I am in Happy Mood");
