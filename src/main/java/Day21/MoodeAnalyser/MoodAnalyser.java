@@ -14,23 +14,27 @@ public class MoodAnalyser {
 		this.message = message;
 	}
 
+	public MoodAnalyser() {
+		// TODO Auto-generated constructor stub
+	}
+
 	// Function to Check Mood of a String Entered
-	public String moodCheck() {
-		
-		// Created Try and Catch Blocks to Handle Exceptions if Occurs.
-		try {
-			if (message.contains("Sad")) {
-				System.out.println("In SAD Mood");
-				return "SAD";
-			} else {
-				System.out.println("In HAPPY Mood");
-				return "HAPPY";
-			}
-		}
-		// Don't Know what would be exception, So Took a Normal Exception to Catch,
-		// Whatever Exception Occurs.
-		catch (Exception exception) {
+	public String moodCheck() throws MoodAnalysisException {
+
+		if (message == null) {
+			throw new MoodAnalysisException(
+					MoodAnalysisException.type_of_exception.NULL_MOOD_EXCEPTION + " Please enter valid message.");
+
+		} else if (message.isEmpty()) {
+			throw new MoodAnalysisException(
+					MoodAnalysisException.type_of_exception.EMPTY_MOOD_EXCEPTION + " Please enter valid message.");
+
+		} else if (message.contains("Sad")) {
+			return "SAD";
+
+		} else {
 			return "HAPPY";
 		}
+
 	}
 }
